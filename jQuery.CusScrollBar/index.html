@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery.cusScrollBar</title>
+	<script src="http://s0.qhimg.com/lib/jquery/191.js"></script>
+	<script src="jQuery.cusScrollBar.js"></script>
+	<style>
+		body{
+			margin: 0;
+			padding: 0;
+			background-color: #555;
+		}
+			
+		.wrap{
+			width: 320px;
+			height: 480px;
+			position: relative;
+			overflow: hidden;
+			margin: 0 auto;
+		}
+		.content{
+			width: 320px;
+			height: 480px;
+			overflow: hidden;
+		}
+
+		
+		.scroll{
+			width: 10px;
+			height: 100%;
+			right: 0;
+			top: 0;
+			position: absolute;
+		}
+		.scroll .scroll-bg{
+			width: 100%;
+			height: 100%;
+			background-color: rgba(255,255,255,.7);
+		}
+		.scroll .slider{
+			width: 8px;
+			background-color: rgba(0,0,0,.8);
+			border-radius: 8px;
+			position: absolute;
+			top: 0;
+			left: 1px;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="content">
+			<iframe src="http://sh.qihoo.com/" height="5700" width="320" scrolling="no" frameborder="0" style="opacity:.5"></iframe>
+		</div>
+		<div class="scroll">
+			<div class="scroll-bg"></div>
+			<div class="slider"></div>
+		</div>
+	</div>
+	<script>
+	$(function(){
+
+		var scrollbar = new CusScrollBar({
+			scrollDir:"y",
+			contSelector: $('.wrap .content'),
+            scrollBarSelector:".scroll",
+            sliderSelector:".slider"
+		});
+
+		scrollbar.on("resizeSlider",function(){
+			$(".slider-bd").css("height",this.getSliderSize()-8);
+		}).resizeSlider();
+
+	})
+	</script>
+</body>
+</html>
