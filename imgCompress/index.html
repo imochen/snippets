@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas图片压缩</title>
+	<script src="imgCompress.js"></script>
+</head>
+<body>
+	<div><input id="img_upload" type="file" ></div>
+	<img id="img_tmp" src="">
+</body>
+<script>
+	document.getElementById('img_upload').onchange = function(){
+		readImg.call( this , img_tmp , {
+			scale : 0.8
+		} ,function( res ){
+			document.getElementById('img_tmp').setAttribute('src',res);
+		});
+	}
+	function readImg( img_tmp , opt , callback ){
+		
+		var reader = new FileReader(),
+			opt = opt || {};
+
+		reader.onload = function( event ){
+
+			if( event.type === 'load' ){
+				console.log('压缩前：' + event.total );
+				opt.src = event.target.result;
+				imgCompress( opt , callback );
+
+			}
+
+		}
+
+		if( this.files ){
+
+			var file = this.files[0];
+
+			reader.readAsDataURL( file );
+
+		}
+
+	}
+</script>
+</html>
