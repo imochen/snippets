@@ -13,3 +13,6 @@ create by : https://github.com/huzunjie
 ```javascript
 @return {number} //返回-1表示没有检测到flash版本
 ```
+
+####imgCompres
+前端图片压缩，一般用于移动端上传前对图片进行简单处理
