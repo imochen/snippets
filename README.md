@@ -16,3 +16,7 @@ create by : https://github.com/huzunjie
 
 ####imgCompres
 前端图片压缩，一般用于移动端上传前对图片进行简单处理
+
+
+####mResize
+根据页面大小，自动调整根字体的大小，以便更好的使用rem，多用于移动端。
