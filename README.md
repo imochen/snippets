@@ -3,6 +3,16 @@
 ####less&sass mixins
 source url : https://github.com/mytcer/xmixins
 
+sass mixin 新增单位自动转换方法。
+定义设计稿的尺寸后，只需要按照px切图即可。
+
+```css
+	.logo{
+		width : px2rem(300);
+		height : px2rem(300);
+	}
+	//这里的300直接是设计图上量出来的
+```
 
 ####jQuery.cusScrollBar
 create by : https://github.com/huzunjie

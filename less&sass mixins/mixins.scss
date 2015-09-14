@@ -1,3 +1,19 @@
+//在这里定义设计图的宽度，单位是px。
+//然后以后的单位中，直接写设计图上得到的尺寸即可。
+//记得配合mresize使用
+// .logo{
+// 		width : px2rem(300); //这里的300，是在设计图上量出来的，没做任何处理;
+// }
+
+$designWidth : 750;
+
+
+@function px2rem( $px ){
+	//320*50/750/20
+	@return $px*320/$designWidth/20 + rem;
+}
+
+
 @mixin animation($value) {
 	-webkit-animation: $value;
 	-moz-animation: $value;
