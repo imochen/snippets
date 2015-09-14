@@ -9,6 +9,7 @@
  * 
  * step2 : 将尺寸大小转化为 w/20 rem。[推荐使用less]
  * 
+ * 已知bug : 部分小米机型需要在页面ready之后 触发一下  window 的resize事件 
  */
 ;(function( window , document ){
 

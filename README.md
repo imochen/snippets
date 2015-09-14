@@ -20,7 +20,7 @@ create by : https://github.com/huzunjie
 
 ####mResize
 根据页面大小，自动调整根字体的大小，以便更好的使用rem，多用于移动端。
-
+部分小米机型不能重新计算，需要在页面ready之后手动触发一下 window 的 resize事件
 
 ####mframe
 解决UI和数据分离的问题，demo下载后可修改 src/index/data.js 中得请求地址及参数测试效果。
