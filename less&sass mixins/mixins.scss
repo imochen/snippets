@@ -13,6 +13,45 @@ $designWidth : 750;
 	@return $px*320/$designWidth/20 + rem;
 }
 
+@mixin flexbox{
+	display: -webkit-box; //old
+	display: -moz-box; //old
+	display: -ms-flexbox; // ie
+	display: -webkit-flex; //new
+	display: flex; //new
+}
+
+@mixin flex( $value ){
+	-webkit-box-flex: $value;
+	-moz-box-flex: $value;
+	-ms-flex: $value;
+	-webkit-flex: $value;
+	flex: $value;
+}
+
+@mixin flex-order( $order ){
+	-webkit-box-ordinal-group: $order; // old
+	-moz-box-ordinal-group: $order; // old
+	-ms-flex-order: $order; // ie
+	-webkit-order: $order; // new
+	order: $order; // new
+}
+
+@mixin flex-direction($direction){
+	@if $direction == column{
+		-webkit-flex-direction:vertical;
+		-moz-flex-direction:vertical;
+		-ms-flex-direction:column;
+		-webkit-flex-direction:column;
+		flex-direction:column;
+	}@else{
+		-webkit-flex-direction:horizontal;
+		-moz-flex-direction:horizontal;
+		-ms-flex-direction:row;
+		-webkit-flex-direction:row;
+		flex-direction:row;
+	}
+ }
 
 @mixin animation($value) {
 	-webkit-animation: $value;
